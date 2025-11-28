@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+input, textarea, select {
+  @apply border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white;
+}
+
+label {
+  @apply text-sm font-semibold text-slate-700;
+}
+
+button:disabled {
+  @apply opacity-70 cursor-not-allowed;
+}
