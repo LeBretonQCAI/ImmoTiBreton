@@ -36,8 +36,8 @@ Application web monopage pour générer automatiquement des rapports d’experti
 ## Dépannage installation (erreurs 403 / proxy)
 Si `npm install` échoue avec un 403 ou des avertissements liés à `http-proxy`/`https-proxy` :
 - Vérifiez que les variables d’environnement `npm_config_http_proxy` et `npm_config_https_proxy` ne pointent pas vers un proxy bloquant (`unset npm_config_http_proxy npm_config_https_proxy`).
+- La racine du projet inclut un fichier `.npmrc` qui force l’utilisation du registre public **et neutralise tout proxy hérité** (`proxy=` et `https-proxy=`). Supprimez ou ajustez ces valeurs si votre réseau exige un proxy interne.
 - Assurez-vous que votre réseau autorise l’accès à `https://registry.npmjs.org/`.
-- La racine du projet inclut un fichier `.npmrc` qui force l’utilisation du registre public ; si votre environnement impose un proxy privé, remplacez le registre dans ce fichier ou exportez les variables nécessaires avant l’installation.
 - Si `next dev` signale que le binaire SWC natif manque, installez les dépendances optionnelles (`@next/swc-*`) ou lancez `npm run dev:wasm` pour utiliser le fallback WebAssembly.
 
 ## Production
